@@ -1,0 +1,3 @@
+Esto es una aplicación hecha en CodeIgniter que busca en youtube 'El Fary' seguido de lo que sea que siga el dominio al que entras.
+
+Hay que añadir una 'rewrite rule' al virtual host o a un fichero .htacess en Apache para eliminar el 'index.php'.
