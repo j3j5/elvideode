@@ -1,9 +1,12 @@
 <!-- <!DOCTYPE html> -->
-<html lang="en">
+<html style="">
 <head>
+<?php
+$this->load->helper('html_helper');
+echo link_tag('favicon.png', 'icon', 'image/png');
+?>
+<!-- 	<link rel="icon" href="/favicon.png" type="image/png"> -->
 	<meta charset="utf-8">
-	<meta charset="utf-8">
-	<link rel="icon" href="http://elfaryesdios.info/favicon.png" type="image/png">
 	<meta name="viewport" content="width=device-width; height=device-height;">
 	<title><?php echo $title ?></title>
 </head>
