@@ -23,6 +23,7 @@ class Search extends CI_Controller {
 		{
 			$video_id = 'Zw2dJeJFegg'; // I'm sexy and I know it youtube video ID
 			$view_data['title'] = "I'm sexy and I know it";
+			$view_data['description'] = 'El Fary es Dios';
 		}
 		else
 		{
@@ -34,11 +35,10 @@ class Search extends CI_Controller {
 			$url = (string) $xml_feed->entry->id;
 			$video_id = substr($url, $video_id_length);
 // 			$view_data['title'] = (string) $xml_feed->entry->title;
-		}
-		if(!isset($view_data['title']))
-		{
 			$view_data['title'] = str_replace('+', ' ', $clean_query);
+			$view_data['description'] = (string) $xml_feed->entry->content;
 		}
+		$view_data['video_id'] = $video_id;
 		$view_data['url'] = '"https://www.youtube.com/v/' . $video_id . '?version=3&hd=1&f=videos&autoplay=1&loop=1&playlist=' . $video_id . '&modestbranding=1&controls=0"';
 		$this->load->view('video_player', $view_data);
 	}
