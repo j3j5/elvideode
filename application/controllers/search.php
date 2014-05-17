@@ -40,6 +40,8 @@ class Search extends CI_Controller {
 		}
 		$view_data['video_id'] = $video_id;
 		$view_data['url'] = '"https://www.youtube.com/v/' . $video_id . '?version=3&hd=1&f=videos&autoplay=1&loop=1&playlist=' . $video_id . '&modestbranding=1&controls=0"';
+
+		$this->output->set_header("ETag: \"" . $video_id . '"');
 		$this->load->view('video_player', $view_data);
 	}
 
