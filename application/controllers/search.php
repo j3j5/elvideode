@@ -66,7 +66,7 @@ class Search extends CI_Controller {
 
 
 	/**
-	 * Search on Youtube's feed api the 'el+fary' plus the given query
+	 * Search on Youtube's feed api the plus the given query
 	 *
 	 * @param String $query The query to search for
 	 *
@@ -76,7 +76,8 @@ class Search extends CI_Controller {
 	 */
 	private function _search_on_feed($query)
 	{
-		$url = 'https://gdata.youtube.com/feeds/api/videos?max-results=1&q=el+fary+' . $query;
+		$url = 'https://gdata.youtube.com/feeds/api/videos?max-results=1&q=' . $query;
+		//$url = 'https://gdata.youtube.com/feeds/api/users/VideosCortosAPM/uploads?q=' . $query;
 		$ch = curl_init($url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -89,4 +90,4 @@ class Search extends CI_Controller {
 }
 
 /* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+/* Location: ./application/controllers/search.php */
