@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://elfaryesdios.info';
+$config['base_url']	= 'http://elvideo.de';
 
 /*
 |--------------------------------------------------------------------------
@@ -266,7 +266,7 @@ $config['sess_time_to_update']	= 300;
 |
 */
 $config['cookie_prefix']	= "";
-$config['cookie_domain']	= "";
+$config['cookie_domain']	= "elvideo.de";
 $config['cookie_path']		= "/";
 $config['cookie_secure']	= FALSE;
 
@@ -293,9 +293,9 @@ $config['global_xss_filtering'] = TRUE;
 | 'csrf_cookie_name' = The cookie name
 | 'csrf_expire' = The number in seconds the token should expire.
 */
-$config['csrf_protection'] = TRUE;
-$config['csrf_token_name'] = 'csrf_test_name';
-$config['csrf_cookie_name'] = 'csrf_cookie_name';
+$config['csrf_protection'] = FALSE;
+$config['csrf_token_name'] = 'csrf_eltoken_de';
+$config['csrf_cookie_name'] = 'csrf_elvideo_de';
 $config['csrf_expire'] = 7200;
 
 /*
@@ -355,7 +355,7 @@ $config['rewrite_short_tags'] = FALSE;
 | Comma-delimited, e.g. '10.0.1.200,10.0.1.201'
 |
 */
-$config['proxy_ips'] = '';
+$config['proxy_ips'] = '127.0.0.1';
 
 
 /* End of file config.php */
