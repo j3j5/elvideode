@@ -22,6 +22,7 @@ class Search extends CI_Controller {
 		if(!$query)
 		{
 			$video_id = 'Zw2dJeJFegg'; // I'm sexy and I know it youtube video ID
+			$view_data['query'] = 'empty';
 			$view_data['title'] = "I'm sexy and I know it";
 			$view_data['description'] = 'El Fary es Dios';
 		}
@@ -29,6 +30,7 @@ class Search extends CI_Controller {
 		{
 			$common_pattern = 'http://gdata.youtube.com/feeds/api/videos/';
 			$video_id_length = -11;
+			$view_data['query'] = $query;
 			$clean_query = $this->_sanitize_query($query);
 			$feed = $this->_search_on_feed($clean_query);
 			$xml_feed = new SimpleXMLElement($feed);
