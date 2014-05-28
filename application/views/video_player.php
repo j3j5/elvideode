@@ -39,7 +39,7 @@ echo '<meta property="og:description" content="' . $description . '">'
 
 <meta property="og:type" content="video">
 <meta property="og:video:type" content="application/x-shockwave-flash">
-<meta property="og:site_name" content="El Fary Es Dios">
+<meta property="og:site_name" content="El Vídeo de">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width; height=device-height;">
 <title><?php echo $title ?></title>
