@@ -15,6 +15,14 @@ echo '<meta property="og:description" content="' . $description . '">'
 <!-- Piwik -->
 <script type="text/javascript">
   var _paq = _paq || [];
+  _paq.push(['trackSiteSearch',
+			// Search keyword searched for
+			"<?php echo $query; ?>",
+			// Search category selected in your search engine. If you do not need this, set to false
+			false,
+			// Number of results on the Search results page. Zero indicates a 'No Result Search Keyword'. Set to false if you don't know
+			1
+  ]);
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
