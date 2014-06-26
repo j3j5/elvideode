@@ -21,10 +21,12 @@ class Search extends CI_Controller {
 	{
 		if(!$query)
 		{
-			$video_id = 'Zw2dJeJFegg'; // I'm sexy and I know it youtube video ID
-			$view_data['query'] = 'empty';
-			$view_data['title'] = "I'm sexy and I know it";
-			$view_data['description'] = 'El Fary es Dios';
+			$video_id = 'elvideo.de.0.0.1'; // I'm sexy and I know it youtube video ID
+			$view_data['query'] = '';
+			$view_data['title'] = "ElVídeo.de";
+			$view_data['description'] = 'Bonitas URLs para vídeos míticos';
+			$this->output->set_header("ETag: \"" . $video_id . '"');
+			$this->load->view('landing', $view_data);
 		}
 		else
 		{
@@ -39,12 +41,12 @@ class Search extends CI_Controller {
 // 			$view_data['title'] = (string) $xml_feed->entry->title;
 			$view_data['title'] = str_replace('+', ' ', $clean_query);
 			$view_data['description'] = (string) $xml_feed->entry->content;
-		}
-		$view_data['video_id'] = $video_id;
-		$view_data['url'] = '"https://www.youtube.com/v/' . $video_id . '?version=3&hd=1&f=videos&autoplay=1&loop=1&playlist=' . $video_id . '&modestbranding=1&controls=0"';
+			$view_data['video_id'] = $video_id;
+			$view_data['url'] = '"https://www.youtube.com/v/' . $video_id . '?version=3&hd=1&f=videos&autoplay=1&loop=1&playlist=' . $video_id . '&modestbranding=1&controls=0"';
 
-		$this->output->set_header("ETag: \"" . $video_id . '"');
-		$this->load->view('video_player', $view_data);
+			$this->output->set_header("ETag: \"" . $video_id . '"');
+			$this->load->view('video_player', $view_data);
+		}
 	}
 
 
